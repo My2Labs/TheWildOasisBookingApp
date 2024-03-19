@@ -16,5 +16,6 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "no-unused-vars": "warn", // Add this line to enable the no-unused-vars rule
   },
 };
