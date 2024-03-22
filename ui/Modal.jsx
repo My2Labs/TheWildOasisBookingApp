@@ -71,6 +71,7 @@ function Modal({ children }) {
 
 function Open({ children, opens: opensWindowName }) {
   const { open } = useContext(ModalContext);
+
   return cloneElement(children, { onClick: () => open(opensWindowName) });
 }
 
@@ -86,6 +87,7 @@ function Window({ children, name }) {
         <Button onClick={close}>
           <HiXMark />
         </Button>
+
         <div>{cloneElement(children, { onCloseModal: close })}</div>
       </StyledModal>
     </Overlay>,
@@ -95,20 +97,5 @@ function Window({ children, name }) {
 
 Modal.Open = Open;
 Modal.Window = Window;
-
-// React portal
-
-// function Modal({ children, onClose }) {
-//   return (
-//     <Overlay>
-//       <StyledModal>
-//         <Button onClick={onClose}>
-//           <HiXMark />
-//         </Button>
-//         <div>{children}</div>
-//       </StyledModal>
-//     </Overlay>
-//   );
-// }
 
 export default Modal;
