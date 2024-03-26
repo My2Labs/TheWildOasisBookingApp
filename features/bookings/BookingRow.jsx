@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { format, isToday } from "date-fns";
 
@@ -45,6 +46,7 @@ function BookingRow({
     totalPrice,
     status,
     guests: { fullName: guestName, email },
+    // guests,
     cabins: { name: cabinName },
   },
 }) {
@@ -53,6 +55,9 @@ function BookingRow({
     "checked-in": "green",
     "checked-out": "silver",
   };
+
+  // const guestName = guests && guests.fullName ? guests.fullName : "Guest Name";
+  // const email = guests && guests.email ? guests.email : "guest@example.com";
 
   return (
     <Table.Row>
